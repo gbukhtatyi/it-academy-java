@@ -20,7 +20,7 @@ public class Homework2 {
         Homework2.exercise6(7.5);
         Homework2.divider();
 
-        Homework2.exercise7(new int[]{1, 2, 3, 9});
+        Homework2.exercise7(new int[]{1, 2, 3, 4,5});
         Homework2.divider();
     }
 
@@ -111,10 +111,17 @@ public class Homework2 {
         System.out.println("Задание 7");
         System.out.println("Числа:");
         int sum = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            sum += numbers[i];
-            System.out.println(" - " + numbers[i]);
-        }
+
+        sum += numbers[0];
+        System.out.println(" - " + numbers[0]);
+        sum += numbers[1];
+        System.out.println(" - " + numbers[1]);
+        sum += numbers[2];
+        System.out.println(" - " + numbers[2]);
+        sum += numbers[3];
+        System.out.println(" - " + numbers[3]);
+        sum += numbers[4];
+        System.out.println(" - " + numbers[4]);
 
         double result = (double) sum / numbers.length;
 
