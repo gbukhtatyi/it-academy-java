@@ -20,7 +20,7 @@ public class Homework2 {
         Homework2.exercise6(7.5);
         Homework2.divider();
 
-        Homework2.exercise7(1, 2, 3, 4, 5);
+        Homework2.exercise7(1, 2, 3, 4, 7);
         Homework2.divider();
     }
 
@@ -109,9 +109,8 @@ public class Homework2 {
      */
     protected static void exercise7(int a, int b, int c, int d, int e) {
         System.out.println("Задание 7");
-        System.out.println("Числа:");
 
-        int result = (a + b + c + d + e) / 5;
+        double result = (double) (a + b + c + d + e) / 5;
 
         System.out.println("Результат: " + result);
     }
