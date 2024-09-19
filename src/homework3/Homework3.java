@@ -31,8 +31,7 @@ public class Homework3 {
     private static void exercise1() {
         int number = getNumber();
 
-        if (isInvalidNUmber(number)) {
-            System.out.println("Ошибка! Введенное число не является целым положительным трехзначным числом.");
+        if (validateNumber(number)) {
             return;
         }
 
@@ -51,8 +50,7 @@ public class Homework3 {
     private static void exercise2() {
         int number = getNumber();
 
-        if (isInvalidNUmber(number)) {
-            System.out.println("Ошибка! Введенное число не является целым положительным трехзначным числом.");
+        if (validateNumber(number)) {
             return;
         }
 
@@ -76,8 +74,7 @@ public class Homework3 {
     private static void exercise3() {
         int number = getNumber();
 
-        if (isInvalidNUmber(number)) {
-            System.out.println("Ошибка! Введенное число не является целым положительным трехзначным числом.");
+        if (validateNumber(number)) {
             return;
         }
 
@@ -141,6 +138,16 @@ public class Homework3 {
     private static int getNumber(String text) {
         System.out.print(text);
         return sc.nextInt();
+    }
+
+    private static boolean validateNumber(int number) {
+        boolean result = isInvalidNUmber(number);
+        
+        if (result) {
+            System.out.println("Ошибка! Введенное число не является целым положительным трехзначным числом.");
+        }
+
+        return result;
     }
 
     private static boolean isInvalidNUmber(int number) {
