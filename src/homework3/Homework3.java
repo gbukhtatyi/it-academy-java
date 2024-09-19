@@ -31,14 +31,14 @@ public class Homework3 {
     private static void exercise1() {
         int number = getNumber();
 
-        if (number < 100 || number > 999) {
+        if (isInvalidNUmber(number)) {
             System.out.println("Ошибка! Введенное число не является целым положительным трехзначным числом.");
             return;
         }
 
-        int units = number % 10;
-        int tens = number % 100 - units;
-        int hundreds = number - tens - units;
+        int units = getUnits(number);
+        int tens = getTens(number);
+        int hundreds = getHundreds(number);
 
         System.out.println("Ответ: " + hundreds + " + " + tens + " + " + units);
     }
@@ -51,7 +51,7 @@ public class Homework3 {
     private static void exercise2() {
         int number = getNumber();
 
-        if (number < 100 || number > 999) {
+        if (isInvalidNUmber(number)) {
             System.out.println("Ошибка! Введенное число не является целым положительным трехзначным числом.");
             return;
         }
@@ -76,7 +76,7 @@ public class Homework3 {
     private static void exercise3() {
         int number = getNumber();
 
-        if (number < 100 || number > 999) {
+        if (isInvalidNUmber(number)) {
             System.out.println("Ошибка! Введенное число не является целым положительным трехзначным числом.");
             return;
         }
@@ -141,6 +141,10 @@ public class Homework3 {
     private static int getNumber(String text) {
         System.out.print(text);
         return sc.nextInt();
+    }
+
+    private static boolean isInvalidNUmber(int number) {
+        return number < 100 || number > 999;
     }
 
     private static int getUnits(int number) {
