@@ -1,8 +1,6 @@
 package Homework6;
 
-import Util.Input;
-
-import java.util.Scanner;
+import util.Input;
 
 public class Homework6 {
     public static void main(String[] args) {
@@ -138,7 +136,6 @@ public class Homework6 {
         int[] arr = generateArray(10, 10, 99);
         printArray("Исходная последовательность:", arr);
 
-        boolean result = indexOf(arr, x);
         if (indexOf(arr, x)) {
             System.out.println("Число X находится в массиве");
         } else {
@@ -210,7 +207,7 @@ public class Homework6 {
     public static void exercise7() {
         int n = Input.getNumberGreater("Введите ваше число N: ", 1);
 
-        int[] arr = fillArray(new int[n]);
+        int[] arr = fillMirrorArray(new int[n]);
         printArray("Ответ :", arr);
     }
 
@@ -221,7 +218,7 @@ public class Homework6 {
      * @param arr
      * @return
      */
-    public static int[] fillArray(int[] arr) {
+    public static int[] fillMirrorArray(int[] arr) {
         int amountSteps = arr.length / 2;
         boolean isEven = arr.length % 2 == 0;
 
