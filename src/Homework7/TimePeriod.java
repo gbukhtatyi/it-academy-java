@@ -1,29 +1,37 @@
 package Homework7;
 
 public class TimePeriod {
-    protected int currentSeconds = 0;
+    protected int timeInSeconds = 0;
+    protected int timeHours = 0;
+    protected int timeMinutes = 0;
+    protected int timeSeconds = 0;
+
 
     public TimePeriod(int seconds) {
-        currentSeconds = seconds;
+        timeInSeconds = seconds;
+
+        timeSeconds = timeInSeconds % 60;
+        timeMinutes = timeInSeconds / 60 % 60;
+        timeHours = timeInSeconds / 3600;
     }
 
     public TimePeriod(int hours, int minutes, int seconds) {
-        currentSeconds = seconds + minutes * 60 + hours * 3600;
+        timeHours = hours;
+        timeMinutes = minutes;
+        timeSeconds = seconds;
+
+        timeInSeconds = seconds + minutes * 60 + hours * 3600;
     }
 
     public boolean equals(TimePeriod period) {
-        return currentSeconds == period.toSeconds();
+        return timeInSeconds == period.toSeconds();
     }
 
     public int toSeconds() {
-        return currentSeconds;
+        return timeInSeconds;
     }
 
     public String toTimeString() {
-        int seconds = currentSeconds % 60;
-        int minutes = currentSeconds / 60 % 60 ;
-        int hours = currentSeconds / 3600;
-
-        return hours + ":" + minutes + ":" + seconds;
+        return timeHours + ":" + timeMinutes + ":" + timeSeconds;
     }
 }
