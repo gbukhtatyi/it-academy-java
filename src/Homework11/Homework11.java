@@ -2,6 +2,8 @@ package Homework11;
 
 import Homework11.airline.*;
 
+import java.util.ArrayList;
+
 public class Homework11 {
     public static void main(String[] args) {
         System.out.println("Задание 1. Класс Money");
@@ -15,7 +17,7 @@ public class Homework11 {
         Money cash = new Money(5, 17);
         Money cashTwo = new Money(5, 27);
 
-        if (cash.compareTo(cashTwo)) {
+        if (cash.compareTo(cashTwo) == 0) {
             System.out.println("Суммы наличных равны");
         } else {
             System.out.println("Суммы наличных не равны");
@@ -29,19 +31,23 @@ public class Homework11 {
     }
 
     public static void exercise2() {
-        Airplane airplane = new Airplane("Самолет", 1000,1000);
+        Airplane airplane = new Airplane("Самолет", 1000, 1000);
+        Airplane airplane2 = new Airplane("Самолет", 100, 100);
         Helicopter helicopter = new Helicopter("Вертолет", 100, 100);
-        Quadcopter quadcopter = new Quadcopter("", 10,10);
+        Quadcopter quadcopter = new Quadcopter("Квадрокоптер", 10, 10);
 
-        Company airline = new Company(new FlyingMachine[]{airplane, helicopter, quadcopter});
+        Company airline = new Company(new FlyingMachine[]{airplane, airplane2, helicopter, quadcopter});
 
         System.out.println("Общая вместимость: " + airline.getCapacity());
         System.out.println("Общая грузоподъемность: " + airline.getLoadCapacity());
 
         try {
-            FlyingMachine machine = airline.search("Самолет", 1000, 10);
-            System.out.println("Найдено: " + machine.toString());
-        } catch (Exception exp){
+            ArrayList<FlyingMachine> machines = airline.search("Самолет", 100, 10);
+            System.out.println("Найдено: ");
+            for (FlyingMachine machine : machines) {
+                System.out.println(" * " + machine.toString());
+            }
+        } catch (Exception exp) {
             System.out.println("Ошибка! " + exp.getMessage());
         }
     }

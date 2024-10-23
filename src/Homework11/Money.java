@@ -53,14 +53,19 @@ public class Money {
         }
     }
 
-    public boolean compareTo(Money obj) {
-        return this.getUnits() == obj.getUnits() && this.getDivision() == obj.getDivision();
+    public int compareTo(Money obj) {
+        if (this.getUnits() > obj.getUnits()
+                || (this.getUnits() == obj.getUnits() && this.getDivision() > obj.getDivision())) {
+            return 1;
+        } else if (this.getUnits() == obj.getUnits() && this.getDivision() == obj.getDivision()) {
+            return 0;
+        } else {
+            return -1;
+        }
     }
 
     public boolean isGreater(Money obj) {
-        return this.getUnits() > obj.getUnits() || (
-                this.getUnits() == obj.getUnits() && this.getDivision() >= obj.getDivision()
-        );
+        return compareTo(obj) == 1;
     }
 
     public String toString() {

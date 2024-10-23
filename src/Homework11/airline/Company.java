@@ -1,5 +1,7 @@
 package Homework11.airline;
 
+import java.util.ArrayList;
+
 public class Company {
     protected FlyingMachine[] flyingMachines;
 
@@ -11,8 +13,8 @@ public class Company {
         return flyingMachines;
     }
 
-    public FlyingMachine search(String name, int capacity, int loadCapacity) throws Exception {
-        FlyingMachine result = null;
+    public ArrayList<FlyingMachine> search(String name, int capacity, int loadCapacity) throws Exception {
+        ArrayList<FlyingMachine> result = new ArrayList<FlyingMachine>();
         for (FlyingMachine machine : flyingMachines) {
             if (!machine.getName().equals(name)) {
                 continue;
@@ -26,11 +28,10 @@ public class Company {
                 continue;
             }
 
-            result = machine;
-            break;
+            result.add(machine);
         }
 
-        if (null == result) {
+        if (result.isEmpty()) {
             throw new Exception("Не удалось подобрать летательный аппарат");
         }
 
