@@ -17,6 +17,18 @@ public class Input {
     }
 
     /**
+     * Запросит строку c сообщением text
+     *
+     * @param text
+     * @return
+     */
+    public static String getText(String text) {
+        System.out.print(text);
+        return new Scanner(System.in)
+                .next();
+    }
+
+    /**
      * Запросит число c сообщением text которое должно быть больше или равно min
      *
      * @param text
