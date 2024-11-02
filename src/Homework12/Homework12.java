@@ -55,7 +55,16 @@ public class Homework12 {
     }
 
     protected static boolean isPalindrome(String s) {
-        return s.equalsIgnoreCase(new StringBuilder(s).reverse().toString());
+        // return s.equalsIgnoreCase(new StringBuilder(s).reverse().toString());
+
+        int len = s.length();
+        for (int i = 0; i < (len / 2); i++) {
+            if (s.charAt(i) != s.charAt(len - i - 1)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
