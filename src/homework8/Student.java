@@ -1,4 +1,4 @@
-package Homework8;
+package homework8;
 
 public class Student extends Man {
     int studyingYear;

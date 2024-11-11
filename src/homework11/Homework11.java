@@ -1,6 +1,6 @@
-package Homework11;
+package homework11;
 
-import Homework11.airline.*;
+import homework11.airline.*;
 
 import java.util.ArrayList;
 

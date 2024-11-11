@@ -1,4 +1,4 @@
-package Homework7;
+package homework7;
 
 public class TimePeriod {
     protected int hours = 0;

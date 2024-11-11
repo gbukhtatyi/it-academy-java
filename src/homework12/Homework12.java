@@ -1,4 +1,4 @@
-package Homework12;
+package homework12;
 
 import util.Input;
 
