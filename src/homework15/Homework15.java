@@ -24,14 +24,16 @@ public class Homework15 {
         input.put(3, "Third");
 
         System.out.println("\nИсходные данные: ");
-        input.forEach((key, value) -> {
-            System.out.println(key + " -> " + value);
-        });
+        printKeyValueLine(input);
 
         HashMap<String, Integer> result = convertMap(input);
 
         System.out.println("\nРезультат: ");
-        result.forEach((key, value) -> {
+        printKeyValueLine(result);
+    }
+
+    protected static void printKeyValueLine(HashMap lines ){
+        lines.forEach((key, value) -> {
             System.out.println(key + " -> " + value);
         });
     }
