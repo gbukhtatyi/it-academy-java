@@ -1,7 +1,7 @@
 package homework14;
 
 import homework14.store.Order;
-import homework14.store.commands.*;
+import homework14.store.OrderManagement;
 import util.Input;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class Homework14 {
 
         int selection = 0;
         do {
-            ShowOrders.execute(orders);
+            OrderManagement.showOrders(orders);
 
             System.out.println("\nДоступные команды:");
             System.out.println("[0] Выход");
@@ -34,14 +34,14 @@ public class Homework14 {
 
             switch (selection) {
                 case 1:
-                    Order order = CreateOrder.execute();
+                    Order order = OrderManagement.createOrder();
                     orders.add(order);
                     break;
                 case 2:
-                    EditOrder.execute(orders);
+                    OrderManagement.editOrder(orders);
                     break;
                 case 3:
-                    RemoveOrder.execute(orders);
+                    OrderManagement.removeOrder(orders);
                     break;
                 case 0:
                     return;
