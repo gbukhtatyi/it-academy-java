@@ -1,4 +1,4 @@
-package Homework8;
+package homework8;
 
 public class Man {
     public static final String GENDER_MAN = "man";

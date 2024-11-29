@@ -3,6 +3,15 @@ package util;
 import java.util.Scanner;
 
 public class Input {
+    protected static Scanner scanner;
+
+    public static Scanner getScanner() {
+        if (scanner == null) {
+            scanner = new Scanner(System.in);
+        }
+
+        return scanner;
+    }
 
     /**
      * Запросит число c сообщением text
@@ -12,8 +21,8 @@ public class Input {
      */
     public static int getNumber(String text) {
         System.out.print(text);
-        return new Scanner(System.in)
-                .nextInt();
+
+        return getScanner().nextInt();
     }
 
     /**
@@ -24,8 +33,8 @@ public class Input {
      */
     public static String getText(String text) {
         System.out.print(text);
-        return new Scanner(System.in)
-                .next();
+
+        return getScanner().next();
     }
 
     /**

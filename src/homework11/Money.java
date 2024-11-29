@@ -1,4 +1,4 @@
-package Homework11;
+package homework11;
 
 public class Money {
     protected int units;

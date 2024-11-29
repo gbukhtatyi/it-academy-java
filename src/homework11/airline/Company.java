@@ -1,4 +1,4 @@
-package Homework11.airline;
+package homework11.airline;
 
 import java.util.ArrayList;
 
