@@ -5,7 +5,9 @@ import homework19.library.BookManager;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Управление списком книг.
@@ -33,6 +35,10 @@ public class Exercise1 {
 
         // Фильтрация
 
+        System.out.println("Фильтрация по автору черезе Predicate:");
+        Predicate<Book> filterByAuthor = book -> book.getAuthor().equals("Толкиен");
+        System.out.println(BookManager.filterBy(booksFromFile, filterByAuthor));
+
         System.out.println("Фильтрация по автору:");
         System.out.println(BookManager.filterByAuthor(booksFromFile, "Толкиен"));
 
@@ -40,6 +46,10 @@ public class Exercise1 {
         System.out.println(BookManager.filterByAmountPages(booksFromFile, 150));
 
         // Сортировка
+
+        System.out.println("Фильтрация по автору черезе Predicate:");
+        Comparator<Book> sortedByTitle = (book1, book2) -> book1.getTitle().compareTo(book2.getTitle());
+        System.out.println(BookManager.sortedBy(booksFromFile, sortedByTitle));
 
         System.out.println("Сортировка по названию:");
         System.out.println(BookManager.sortedByTitle(booksFromFile));

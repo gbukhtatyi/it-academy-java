@@ -1,8 +1,9 @@
 package homework19.library;
 
 import java.io.*;
-import java.util.Comparator;
 import java.util.List;
+import java.util.Comparator;
+import java.util.function.Predicate;
 
 public class BookManager {
     public static void writeBooksToFile(String filePath, List<Book> books) throws IOException {
@@ -18,6 +19,10 @@ public class BookManager {
         ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
 
         return (List<Book>) objectInputStream.readObject();
+    }
+
+    public static List<Book> filterBy(List<Book> books, Predicate<Book> condition) {
+        return books.stream().filter(condition).toList();
     }
 
     /**
@@ -36,6 +41,10 @@ public class BookManager {
         return books.stream().filter(
                 book -> book.getAmountPages() >= minAmountPages
         ).toList();
+    }
+
+    public static List<Book> sortedBy(List<Book> books, Comparator<Book> comparator) {
+        return books.stream().sorted(comparator).toList();
     }
 
     /**
